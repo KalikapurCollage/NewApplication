@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_View">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/homeMenuId"
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
+
+        <item
+            android:id="@+id/profileMenuId"
+            android:title="Profile"
+            android:icon="@drawable/ic_person"/>
+
+        <item
+            android:id="@+id/shareMenuId"
+            android:title="Share"
+            android:icon="@drawable/ic_share"/>
+
+    </group>
+
+    <item android:title="Contact">
+
+        <menu>
+            <item
+                android:id="@+id/chatMenuId"
+                android:title="Message"
+                android:icon="@drawable/ic_chat"/>
+            <item
+                android:id="@+id/phoneMenuId"
+                android:title="Phone"
+                android:icon="@drawable/ic_phone"/>
+        </menu>
+
+    </item>
+
+    <item android:title="About">
+
+        <menu>
+            <item
+                android:id="@+id/aboutMenuId"
+                android:title="About US"/>
+        </menu>
+
+    </item>
+
+</menu>
