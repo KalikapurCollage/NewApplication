@@ -1,4 +1,4 @@
-package com.example.newapplication;
+ package com.example.newapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +21,9 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText signUpEmailEditText, signUpPasswordEditText;
-    private Button signUpButton;
-    private TextView signInTextView;
+    private EditText signUpFullNameEditText, signUpEmailEditText, signUpPasswordEditText, signUpConfirmPasswordEditText;
+    private Button registerButton, loginButton;
     private FirebaseAuth mAuth;
-    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,47 +31,56 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_up);
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar = findViewById(R.id.progressBarId);
+        signUpFullNameEditText = findViewById(R.id.signUpFullNameEditTextId);
         signUpEmailEditText = findViewById(R.id.signUpEmailEditTextId);
         signUpPasswordEditText = findViewById(R.id.signUpPasswordEditTextId);
-        signUpButton = findViewById(R.id.signUpButtonId);
-        signInTextView = findViewById(R.id.signInTextViewId);
+        signUpConfirmPasswordEditText = findViewById(R.id.signUpConfirmPasswordEditTextId);
+        registerButton = findViewById(R.id.registerButtonId);
+        loginButton = findViewById(R.id.loginButtonId);
 
-        signInTextView.setOnClickListener(this);
-        signUpButton.setOnClickListener(this);
+        registerButton.setOnClickListener(this);
+        loginButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.signUpButtonId:
+            case R.id.registerButtonId:
                 userRegister();
                 break;
 
-            case R.id.signInTextViewId:
-                Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
-                startActivity(intent);
+            case R.id.loginButtonId:
+                startActivity(new Intent(getApplicationContext(),SignInActivity.class));
                 break;
         }
 
     }
 
     private void userRegister() {
+        String fullName = signUpFullNameEditText.getText().toString().trim();
         String email = signUpEmailEditText.getText().toString().trim();
         String password = signUpPasswordEditText.getText().toString().trim();
+        String confirmPassword = signUpConfirmPasswordEditText.getText().toString().trim();
 
         //checking the validity of the email
+        if(fullName.isEmpty())
+        {
+            signUpFullNameEditText.setError("Full Name");
+            signUpFullNameEditText.requestFocus();
+            return;
+        }
+
         if(email.isEmpty())
         {
-            signUpEmailEditText.setError("Enter an email address");
+            signUpEmailEditText.setError("Email Address");
             signUpEmailEditText.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches())
         {
-            signUpEmailEditText.setError("Enter a valid email address");
+            signUpEmailEditText.setError("Enter Valid Email");
             signUpEmailEditText.requestFocus();
             return;
         }
@@ -92,18 +99,29 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             signUpEmailEditText.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
+
+        if(confirmPassword.isEmpty())
+        {
+            signUpConfirmPasswordEditText.setError("Enter an password address");
+            signUpConfirmPasswordEditText.requestFocus();
+            return;
+        }
+
+        if(!password.equals(confirmPassword)){
+            signUpConfirmPasswordEditText.setError("Password Do not Match.");
+            return;
+        }
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful())
                  {
                      Toast.makeText(getApplicationContext(),"Register is Successful.",Toast.LENGTH_SHORT).show();
                      startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                      finish();
-                 } else {
+                 }
+                else {
                      if(task.getException() instanceof FirebaseAuthUserCollisionException)
                      {
                          Toast.makeText(getApplicationContext(),"User is already Registered.",Toast.LENGTH_SHORT).show();

@@ -10,15 +10,24 @@
     tools:context=".SignUpActivity">
 
     <EditText
+        android:id="@+id/signUpFullNameEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        android:hint="Full Name"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <EditText
         android:id="@+id/signUpEmailEditTextId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:textSize="20sp"
-        android:hint="Email"
+        android:hint="Email Address"
         android:textColorHint="@color/black"
         android:textColor="@color/black"/>
-
 
     <EditText
         android:id="@+id/signUpPasswordEditTextId"
@@ -30,31 +39,32 @@
         android:textColorHint="@color/black"
         android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/signUpButtonId"
+    <EditText
+        android:id="@+id/signUpConfirmPasswordEditTextId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:hint="Confirm Password"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/registerButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"/>
 
-    <TextView
-        android:id="@+id/signInTextViewId"
-        android:layout_marginTop="20dp"
+    <Button
+        android:id="@+id/loginButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Are you already registered ? Sign In"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:gravity="center"/>
-
-    <ProgressBar
-        android:id="@+id/progressBarId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"/>
-
+        android:text="Login"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

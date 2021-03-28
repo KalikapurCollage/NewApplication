@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0AC8B6"
-    android:layout_margin="10sp"
+    android:background="#D8DADA"
+    android:layout_margin="5sp"
     tools:context=".HomeActivity">
 
     <TextView
@@ -14,7 +14,8 @@
         android:layout_height="50dp"
         android:text="About NSTU"
         android:background="#03AE9E"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:layout_margin="12sp"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:gravity="center"/>
@@ -25,6 +26,7 @@
         android:layout_below="@+id/headerId"
         android:background="#ffffff"
         android:text="@string/About_NSTU"
+        android:layout_marginHorizontal="12sp"
         android:textColor="@color/black"
         android:textSize="20sp">
 

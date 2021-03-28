@@ -21,9 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText signInEmailEditText, signInPasswordEditText;
-    private TextView signUpTextView;
-    private Button signInButton;
-    private ProgressBar progressBar;
+    private Button loginButton, createAccountButton;
 
     private FirebaseAuth mAuth;
 
@@ -36,25 +34,23 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         signInEmailEditText = findViewById(R.id.signInEmailEditTextId);
         signInPasswordEditText = findViewById(R.id.signInPasswordEditTextId);
-        signInButton = findViewById(R.id.signInButtonId);
-        signUpTextView = findViewById(R.id.signUpTextViewId);
-        progressBar = findViewById(R.id.progressBarId);
+        loginButton = findViewById(R.id.loginButtonId);
+        createAccountButton = findViewById(R.id.createAccountButtonId);
 
-        signUpTextView.setOnClickListener(this);
-        signInButton.setOnClickListener(this);
+        loginButton.setOnClickListener(this);
+        createAccountButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.signInButtonId:
+            case R.id.loginButtonId:
                 UserLogin();
                 break;
 
-            case R.id.signUpTextViewId:
-                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
-                startActivity(intent);
+            case R.id.createAccountButtonId:
+                startActivity(new Intent(getApplicationContext(),SignUpActivity.class));
                 break;
         }
 
@@ -88,18 +84,15 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-        if (password.length()<6)
-        {
+        if (password.length()<6) {
             signInEmailEditText.setError("Minimum length of a password should be 6");
             signInEmailEditText.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                progressBar.setVisibility(View.GONE);
+            public void onComplete(@NonNull Task<AuthResult> task){
 
                 if(task.isSuccessful()){
                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);

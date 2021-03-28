@@ -4,18 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0AC8B6"
+    android:background="#D8DADA"
     tools:context=".ScheduleActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/headerId"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="BUS SCHEDULE"
+        android:layout_margin="12sp"
+        android:background="#03AE9E"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Bus Schedule Activity"
-        android:textColor="#ffff"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:layout_below="@+id/headerId"
+        android:background="#ffffff"
+        android:layout_marginHorizontal="12sp"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
 
 
 </RelativeLayout>
