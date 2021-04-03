@@ -95,9 +95,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             public void onComplete(@NonNull Task<AuthResult> task){
 
                 if(task.isSuccessful()){
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     finish();
                 }else{
                     Toast.makeText(getApplicationContext(),"Login Successfully.",Toast.LENGTH_SHORT).show();

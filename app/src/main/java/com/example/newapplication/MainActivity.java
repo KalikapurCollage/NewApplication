@@ -8,16 +8,22 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridLayout;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
 
     GridLayout mainGridLayout;
+    private Menu menu;
+    private MenuItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         drawerLayout = findViewById(R.id.drawerId);
+        NavigationView navigationView = findViewById(R.id.navigationId);
+        navigationView.setNavigationItemSelectedListener(this);
+
         toggle = new ActionBarDrawerToggle(this, drawerLayout,R.string.nav_open,R.string.nav_close);
 
         drawerLayout.addDrawerListener(toggle);
@@ -101,11 +110,38 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         if(toggle.onOptionsItemSelected(item))
         {
             return true;
         }
 
+        if(item.getItemId() == R.id.resetPasswordId){
+            startActivity(new Intent(getApplicationContext(),ResetPassword.class));
+        }
+
+        if(item.getItemId() == R.id.logoutId){
+            startActivity(new Intent(getApplicationContext(),SignInActivity.class));
+            finish();
+        }
         return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.homeMenuId)
+        {
+
+        }
+        return false;
     }
 }
