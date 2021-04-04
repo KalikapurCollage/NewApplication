@@ -25,6 +25,9 @@ public class ResetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
+        getSupportActionBar().setTitle("Reset Password");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         userPassword = findViewById(R.id.resetPasswordId);
         userConfirmPassword = findViewById(R.id.resetConfirmPasswordId);
 

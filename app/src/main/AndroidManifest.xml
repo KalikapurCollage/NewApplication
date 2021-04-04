@@ -9,19 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApplication">
-        <activity android:name=".ResetPassword"></activity>
+
+        <activity
+            android:name=".ResetPassword"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".TrackingActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".TeacherInfoActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".StoppageActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SettingActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SeatBookingActivity"
             android:parentActivityName=".MainActivity" />
@@ -37,6 +40,7 @@
         <activity
             android:name=".HomeActivity"
             android:parentActivityName=".MainActivity" />
+
         <activity android:name=".SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

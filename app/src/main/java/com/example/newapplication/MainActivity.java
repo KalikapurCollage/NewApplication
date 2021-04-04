@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -121,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if(item.getItemId() == R.id.logoutId){
+            FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(),SignInActivity.class));
             finish();
         }

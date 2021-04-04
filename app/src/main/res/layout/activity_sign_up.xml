@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="15dp"
     android:background="#ffffff"
+    android:orientation="vertical"
     tools:context=".SignUpActivity">
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"/>
 
@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"/>
 
