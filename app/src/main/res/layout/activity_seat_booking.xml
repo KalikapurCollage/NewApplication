@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerId"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0AC8B6"
+    android:padding="5dp"
     tools:context=".SeatBookingActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Seat Booking Activity"
-        android:textColor="#ffff"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-</RelativeLayout>
+        <Spinner
+            android:id="@+id/spinnerFromId"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+
+        <Spinner
+            android:id="@+id/spinnerToId"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+
+        <TextView
+            android:id="@+id/textViewDateId"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:background="@android:drawable/btn_default"
+            android:gravity="center"
+            android:hint="Select Date"
+            android:textSize="25sp"
+            android:shadowColor="#090909"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/searchButtonId"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:text="Search Buses"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowColor="#14A81E"
+            android:shadowRadius="3"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

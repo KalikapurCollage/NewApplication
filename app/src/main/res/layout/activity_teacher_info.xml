@@ -1,20 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0AC8B6"
+    android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context=".TeacherInfoActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Teacher Information Activity"
-        android:textColor="#ffff"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:padding="3dp"
+            android:orientation="vertical">
 
-</RelativeLayout>
+                <Button
+                    android:id="@+id/CSTEId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CSTE_Button"
+                    android:textSize="20sp"
+                    android:textStyle="normal"/>
+
+                <Button
+                    android:id="@+id/ACCEId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ACCE_Button"
+                    android:textSize="20sp"
+                    android:textStyle="normal"/>
+
+                <Button
+                    android:id="@+id/ICEId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ICE_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/FIMSId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FIMS_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/PharmacyId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Pharmacy_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/EEEId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/EEE_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/MBGId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/MBG_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/AMathId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/AMath_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/StatisticsId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Statistics_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/FTNSId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FTNS_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/ESDMId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ESDM_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/BMBId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/BMB_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/ZoologyId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Zoology_Button"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/EconomicsId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Economics_Button"
+                    android:textSize="20sp"/>
+        </LinearLayout>
+
+</ScrollView>

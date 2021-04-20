@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0AC8B6"
+    android:background="#D8DADA"
+    android:padding="5dp"
     tools:context=".SettingActivity">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="Setting Activity"
-        android:textColor="#ffff"
+        android:textColor="#090909"
         android:textSize="30sp"
         android:textStyle="bold" />
 

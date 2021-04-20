@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D8DADA"
+    android:padding="5dp"
     tools:context=".StoppageActivity">
+
 
     <TextView
         android:id="@+id/headerId"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="BUS SCHEDULE"
-        android:layout_margin="12sp"
+        android:layout_height="45dp"
+        android:text="BUS STOPPAGE"
         android:background="#03AE9E"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:gravity="center"/>
@@ -25,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/headerId"
         android:background="#ffffff"
-        android:layout_marginHorizontal="12sp"
+        android:layout_marginTop="10sp"
         android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:textSize="22sp"/>
 
 </RelativeLayout>

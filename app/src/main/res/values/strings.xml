@@ -7,8 +7,46 @@
 
     <string name="About_NSTU">The natural setting along with its human habitations of the southern regions of Bangladesh has been endowed with
         the vast and immense potentials that can fully be harnessed only through that can creation of a band of skilled manpower equipped with
-        the latest knowledge of Science and Technology. At the beginning of its age and expending its activities of spread the light of modern
+        the latest knowledge of Science and Technology.\n\n At the beginning of its age and expending its activities of spread the light of modern
         education of Science and Technology and Practicing wisdom in every field of knowledge.</string>
 
+
+    <string name="CSTE_Button">Computer Science And Telecommunication Engineering (CSTE)</string>
+    <string name="ACCE_Button">Applied Chemistry And Chemical Engineering (ACCE)</string>
+    <string name="ICE_Button">Information And Communication Engineering (ICE)</string>
+    <string name="EEE_Button">Electric And Electronic Engineering (EEE)</string>
+    <string name="FIMS_Button">Fisheries And Marine Science (FIMS)</string>
+    <string name="Pharmacy_Button">Pharmacy</string>
+    <string name="MBG_Button">Microbiology</string>
+    <string name="AMath_Button">Applied Mathematics (A.Math)</string>
+    <string name="Statistics_Button">Department of Statistics</string>
+    <string name="FTNS_Button">Food Technology And Nutrition Science(FTNS)</string>
+    <string name="ESDM_Button">Environmental Science And Disaster Management(ESDM)</string>
+    <string name="BMB_Button">Biochemistry And Molecular Biology(BMB)</string>
+    <string name="Zoology_Button">Department of Zoology</string>
+    <string name="Economics_Button">Department of Economics</string>
+    
+    
+    <string-array name="bus_name">
+        <item>Minibus A01</item>
+        <item>Minibus A02</item>
+        <item>Minibus A03</item>
+        <item>Minibus A04</item>
+        <item>Microbus M01</item>
+        <item>Microbus M02</item>
+        <item>Microbus M03</item>
+        <item>Microbus M04</item>
+    </string-array>
+
+    <string-array name="bus_time">
+        <item>From: Chourasta 8:50 AM</item>
+        <item>From: Maijdee 8:00 AM</item>
+        <item>From: Maijdee 9:00 AM</item>
+        <item>From: Maijdee 10:00 AM</item>
+        <item>From: Maijdee 7:00 PM</item>
+        <item>From: Campus 3:00 PM</item>
+        <item>From: Campus 4:00 PM</item>
+        <item>From: Campus 5:00 PM</item>
+    </string-array>
 
 </resources>

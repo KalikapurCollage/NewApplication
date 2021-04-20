@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D8DADA"
+    android:orientation="vertical"
+    android:padding="2dp"
     tools:context=".ScheduleActivity">
 
-    <TextView
-        android:id="@+id/headerId"
+    <ListView
+        android:id="@+id/listViewId"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="BUS SCHEDULE"
-        android:layout_margin="12sp"
-        android:background="#03AE9E"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:dividerHeight="3dp"
+        android:divider="@color/white"
+        android:listSelector="#FF9800"/>
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/headerId"
-        android:background="#ffffff"
-        android:layout_marginHorizontal="12sp"
-        android:textColor="@color/black"
-        android:textSize="20sp"/>
-
-
-</RelativeLayout>
+</LinearLayout>
