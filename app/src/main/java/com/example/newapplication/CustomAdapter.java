@@ -4,61 +4,63 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    int[] busImage;
-    String[] busName, busTime;
     Context context;
-    private LayoutInflater inflater;
+    String[] busName, busFrom, busTo, busTime;
+    int[] images;
 
-    CustomAdapter(Context context, String[] busName, String[] busTime, int[] busImage){
+    public CustomAdapter(Context context, String[] busName, String[] busFrom, String[] busTo, String[] busTime, int[] images) {
         this.context = context;
         this.busName = busName;
+        this.busFrom = busFrom;
+        this.busTo = busTo;
         this.busTime = busTime;
-        this.busImage = busImage;
+        this.images = images;
+    }
 
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View view = layoutInflater.inflate(R.layout.bus_adapter, parent,false);
+
+        return new MyViewHolder(view);
     }
 
     @Override
-    public int getCount() {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
+        holder.textviewBusName.setText(busName[position]);
+        holder.textviewBusFrom.setText(busFrom[position]);
+        holder.textviewBusTo.setText(busTo[position]);
+        holder.textviewBusTime.setText(busTime[position]);
+        holder.busImageView.setImageResource(images[0]);
+    }
+
+    @Override
+    public int getItemCount() {
         return busName.length;
     }
 
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
+        TextView textviewBusName, textviewBusFrom, textviewBusTo, textviewBusTime;
+        ImageView busImageView;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null){
-
-            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.bus_adapter,parent,false);
+            textviewBusName = itemView.findViewById(R.id.busNameId);
+            textviewBusFrom = itemView.findViewById(R.id.busFromId);
+            textviewBusTo = itemView.findViewById(R.id.busToId);
+            textviewBusTime = itemView.findViewById(R.id.busTimeId);
+            busImageView = itemView.findViewById(R.id.busImageId);
         }
-
-        ImageView imageView;
-        TextView textView, textView1;
-
-        imageView = convertView.findViewById(R.id.busImageId);
-        textView = convertView.findViewById(R.id.busNameId);
-        textView1 = convertView.findViewById(R.id.busTimeid);
-
-        imageView.setImageResource(busImage[0]);
-        textView.setText(busName[position]);
-        textView1.setText(busTime[position]);
-
-        return convertView;
     }
 }

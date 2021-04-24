@@ -38,15 +38,37 @@
         <item>Microbus M04</item>
     </string-array>
 
+    <string-array name="bus_from">
+        <item>From: Chourasta </item>
+        <item>From: Maijdee </item>
+        <item>From: Maijdee </item>
+        <item>From: Maijdee </item>
+        <item>From: Maijdee </item>
+        <item>From: Campus </item>
+        <item>From: Campus </item>
+        <item>From: Campus </item>
+    </string-array>
+
+    <string-array name="bus_to">
+        <item>To: Campus </item>
+        <item>To: Campus </item>
+        <item>To: Campus </item>
+        <item>To: Campus </item>
+        <item>To: Campus </item>
+        <item>To: Maijdee </item>
+        <item>To: Maijdee </item>
+        <item>To: Chourasta </item>
+    </string-array>
+
     <string-array name="bus_time">
-        <item>From: Chourasta 8:50 AM</item>
-        <item>From: Maijdee 8:00 AM</item>
-        <item>From: Maijdee 9:00 AM</item>
-        <item>From: Maijdee 10:00 AM</item>
-        <item>From: Maijdee 7:00 PM</item>
-        <item>From: Campus 3:00 PM</item>
-        <item>From: Campus 4:00 PM</item>
-        <item>From: Campus 5:00 PM</item>
+        <item>Time: 8:50 am</item>
+        <item>Time: 8:00 AM</item>
+        <item>Time: 9:00 AM</item>
+        <item>Time: 10:00 AM</item>
+        <item>Time: 7:00 PM</item>
+        <item>Time: 3:00 PM</item>
+        <item>Time: 4:00 PM</item>
+        <item>Time: 5:00 PM</item>
     </string-array>
 
 </resources>

@@ -27,7 +27,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText signInEmailEditText, signInPasswordEditText;
-    private Button loginButton, createAccountButton, forgetPasswordButton;
+    private Button loginButton, createAccountButton;
+    private TextView forgetPasswordTextView;
 
     private FirebaseAuth mAuth;
     AlertDialog.Builder reset_alert;
@@ -47,11 +48,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         signInPasswordEditText = findViewById(R.id.signInPasswordEditTextId);
         loginButton = findViewById(R.id.loginButtonId);
         createAccountButton = findViewById(R.id.createAccountButtonId);
-        forgetPasswordButton = findViewById(R.id.forgetPasswordButtonId);
+        forgetPasswordTextView = findViewById(R.id.forgetPasswordId);
 
         loginButton.setOnClickListener(this);
         createAccountButton.setOnClickListener(this);
-        forgetPasswordButton.setOnClickListener(this);
+        forgetPasswordTextView.setOnClickListener(this);
     }
 
     @Override
@@ -66,7 +67,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(getApplicationContext(),SignUpActivity.class));
                 break;
 
-            case R.id.forgetPasswordButtonId:
+            case R.id.forgetPasswordId:
 
                 View view = inflater.inflate(R.layout.reset_pop, null);
 
@@ -148,6 +149,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
     }
+
     protected void onStart() {
         if(FirebaseAuth.getInstance().getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
