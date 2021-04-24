@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -20,22 +21,27 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Month;
 import java.util.Calendar;
+import java.util.Date;
 
 public class SeatBookingActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private DatePickerDialog datePickerDialog;
+    private TimePicker timePicker;
 
     private Spinner spinnerFrom;
     private Spinner spinnerTo;
-    private TextView textViewDate;
+    private TextView textViewTimer;
+    private int timeHour, timeMinute;
     private Button searchButton;
 
     @Override
@@ -48,10 +54,10 @@ public class SeatBookingActivity extends AppCompatActivity implements View.OnCli
 
         spinnerFrom = findViewById(R.id.spinnerFromId);
         spinnerTo = findViewById(R.id.spinnerToId);
-        textViewDate = findViewById(R.id.textViewDateId);
         searchButton = findViewById(R.id.searchButtonId);
 
-        textViewDate.setOnClickListener(this);
+        textViewTimer = findViewById(R.id.textViewTimeId);
+        textViewTimer.setOnClickListener(this);
 
         //From Location
         Spinner dropdownFrom = findViewById(R.id.spinnerFromId);
@@ -69,24 +75,42 @@ public class SeatBookingActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-
-        DatePicker datePicker = new DatePicker(this);
-        int currentDay = datePicker.getDayOfMonth();
-        int currentMonth = (datePicker.getMonth())+1;
-        int currentYear = datePicker.getYear();
-
-
-    datePickerDialog = new DatePickerDialog(SeatBookingActivity.this,
-
-            new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
-                    textViewDate.setText(dayOfMonth+"-"+(month+1)+"-"+year);
-                }
-            },currentYear, currentMonth, currentDay);
-
-    datePickerDialog.show();
+        //Initialize time picker dialog
+        TimePickerDialog timePickerDialog = new TimePickerDialog(
+                SeatBookingActivity.this,
+                android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        //Initialize hour And minute
+                        timeHour = hourOfDay;
+                        timeMinute = minute;
+                        //Store hour and minute in String
+                        String time = timeHour +":"+ timeMinute;
+                        //Initialize 24 hours time format
+                        SimpleDateFormat f24Hours = new SimpleDateFormat(
+                                "HH:mm"
+                        );
+                        try {
+                            Date date = f24Hours.parse(time);
+                            //Initilize 12Hours time format
+                            SimpleDateFormat f12Hours = new SimpleDateFormat(
+                                    "hh:mm aa"
+                            );
+                            //Set Selected time on text view
+                            textViewTimer.setText(f12Hours.format(date));
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },12,0,false
+        );
+        //Set transparent background
+        timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        //Display previous Selected time
+        timePickerDialog.updateTime(timeHour,timeMinute);
+        //Show Dialog
+        timePickerDialog.show();
     }
 
 }
