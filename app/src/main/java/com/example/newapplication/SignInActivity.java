@@ -38,6 +38,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        this.setTitle("Signin Page");
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -157,5 +158,4 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         }
         super.onStart();
     }
-
 }

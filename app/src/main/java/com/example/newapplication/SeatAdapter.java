@@ -12,13 +12,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.MyViewHolder> {
 
     Context context;
     String[] busName, busFrom, busTo, busTime;
     int[] images;
 
-    public CustomAdapter(Context context, String[] busName, String[] busFrom, String[] busTo, String[] busTime, int[] images) {
+    public SeatAdapter(Context context, String[] busName, String[] busFrom, String[] busTo, String[] busTime, int[] images) {
         this.context = context;
         this.busName = busName;
         this.busFrom = busFrom;
@@ -39,10 +39,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.textviewBusName.setText(busName[position]);
-        holder.textviewBusFrom.setText(busFrom[position]);
-        holder.textviewBusTo.setText(busTo[position]);
-        holder.textviewBusTime.setText(busTime[position]);
+        holder.textBusName.setText(busName[position]);
+        holder.textBusFrom.setText(busFrom[position]);
+        holder.textBusTo.setText(busTo[position]);
+        holder.textBusTime.setText(busTime[position]);
         holder.busImageView.setImageResource(images[0]);
     }
 
@@ -51,19 +51,27 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return busName.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView textviewBusName, textviewBusFrom, textviewBusTo, textviewBusTime;
+        TextView textBusName, textBusFrom, textBusTo, textBusTime;
         ImageView busImageView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textviewBusName = itemView.findViewById(R.id.busNameId);
-            textviewBusFrom = itemView.findViewById(R.id.busFromId);
-            textviewBusTo = itemView.findViewById(R.id.busToId);
-            textviewBusTime = itemView.findViewById(R.id.busTimeId);
+            textBusName = itemView.findViewById(R.id.busNameId);
+            textBusFrom = itemView.findViewById(R.id.busFromId);
+            textBusTo = itemView.findViewById(R.id.busToId);
+            textBusTime = itemView.findViewById(R.id.busTimeId);
             busImageView = itemView.findViewById(R.id.busImageId);
+            itemView.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            Toast.makeText(context,"NO: "+(position+1)+" Bus Selected",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(context,SelectingSeatActivity.class);
+            context.startActivity(intent);
+        }
     }
 }

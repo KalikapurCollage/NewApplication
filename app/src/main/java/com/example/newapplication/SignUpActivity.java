@@ -30,6 +30,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         mAuth = FirebaseAuth.getInstance();
+        this.setTitle("Signup Page");
 
         signUpFullNameEditText = findViewById(R.id.signUpFullNameEditTextId);
         signUpEmailEditText = findViewById(R.id.signUpEmailEditTextId);
@@ -63,14 +64,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         String password = signUpPasswordEditText.getText().toString().trim();
         String confirmPassword = signUpConfirmPasswordEditText.getText().toString().trim();
 
-        //checking the validity of the email
         if(fullName.isEmpty())
         {
             signUpFullNameEditText.setError("Full Name");
             signUpFullNameEditText.requestFocus();
             return;
         }
-
+        //checking the validity of the email
         if(email.isEmpty())
         {
             signUpEmailEditText.setError("Email Address");
@@ -88,7 +88,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         //checking the validity of the password
         if(password.isEmpty())
         {
-            signUpPasswordEditText.setError("Enter an password address");
+            signUpPasswordEditText.setError("Enter a password");
             signUpPasswordEditText.requestFocus();
             return;
         }

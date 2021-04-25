@@ -25,8 +25,8 @@
     <string name="BMB_Button">Biochemistry And Molecular Biology(BMB)</string>
     <string name="Zoology_Button">Department of Zoology</string>
     <string name="Economics_Button">Department of Economics</string>
-    
-    
+
+
     <string-array name="bus_name">
         <item>Minibus A01</item>
         <item>Minibus A02</item>
@@ -61,7 +61,7 @@
     </string-array>
 
     <string-array name="bus_time">
-        <item>Time: 8:50 am</item>
+        <item>Time: 8:50 AM</item>
         <item>Time: 8:00 AM</item>
         <item>Time: 9:00 AM</item>
         <item>Time: 10:00 AM</item>
