@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,8 +42,21 @@ public class SeatConfirmActivity extends AppCompatActivity {
             public void onClick(View v) {
                 bookedData();
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    String confirmpasscodeNo = "Ahmed123";
+                    String userpasscodeNo = passcodeNo.getText().toString();
+
+                    if(confirmpasscodeNo.equalsIgnoreCase(userpasscodeNo))
+                    {
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "Seat is booked successfully",Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(SeatConfirmActivity.this, "Enter correct Passcode No", Toast.LENGTH_SHORT).show();
+                        passcodeNo.requestFocus();
+                    }
+
             }
 
             private void bookedData() {
@@ -51,12 +66,10 @@ public class SeatConfirmActivity extends AppCompatActivity {
                 String seatNo = seatNumber.getText().toString().trim();
                 String passcode = passcodeNo.getText().toString().trim();
 
-
                 String key = databaseReference.push().getKey();
 
                 Teachers teachers = new Teachers(name, department, seatNo, passcode);
                 databaseReference.child(key).setValue(teachers);
-                Toast.makeText(getApplicationContext(), "Seat is booked successfully",Toast.LENGTH_SHORT).show();
             }
         });
 

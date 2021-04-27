@@ -58,11 +58,9 @@
         android:id="@+id/seatBookedButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:textSize="20sp"
-        android:hint="Seat Booked"
-        android:textStyle="bold"
         android:layout_marginTop="15dp"
+        android:hint="Seat Booked"
+        android:textSize="22dp"
         android:textColorHint="@color/white"
         android:background="@drawable/background_btn"/>
 
