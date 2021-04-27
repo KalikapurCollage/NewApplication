@@ -64,6 +64,5 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             textviewBusTime = itemView.findViewById(R.id.busTimeId);
             busImageView = itemView.findViewById(R.id.busImageId);
         }
-
     }
 }

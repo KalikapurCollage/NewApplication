@@ -10,7 +10,7 @@
 
 
     <GridLayout
-        android:id="@+id/mainGrid"
+        android:id="@+id/mainGridId"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="12"
@@ -738,7 +738,7 @@
         android:ems="10"
         android:fontFamily="serif"
         android:textAlignment="center"
-        android:text="CONFORM"
+        android:text="Confirm"
         android:textStyle="bold"
         android:textSize="20sp"/>
 

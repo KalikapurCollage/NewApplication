@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D8DADA"
-    android:padding="5dp"
+    android:background="@drawable/background"
     tools:context=".SettingActivity">
 
     <TextView

@@ -4,10 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
-    android:background="#ffffff"
+    android:fontFamily="serif"
+    android:background="@drawable/background"
+    android:padding="8dp"
     android:orientation="vertical"
     tools:context=".SignUpActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/bus_icon"/>
 
     <EditText
         android:id="@+id/signUpFullNameEditTextId"
@@ -16,55 +22,61 @@
         android:inputType="textEmailAddress"
         android:textSize="20sp"
         android:hint="Full Name"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"/>
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/signUpEmailEditTextId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
+        android:layout_marginTop="10dp"
         android:hint="Email Address"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"/>
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/button_back"/>
 
     <EditText
         android:id="@+id/signUpPasswordEditTextId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:inputType="textPassword"
-        android:textSize="20sp"
         android:hint="Password"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"/>
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
 
     <EditText
         android:id="@+id/signUpConfirmPasswordEditTextId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:inputType="textPassword"
-        android:textSize="20sp"
         android:hint="Confirm Password"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"/>
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
 
     <Button
         android:id="@+id/registerButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Register"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:textSize="22sp"
+        android:background="@drawable/background_btn"/>
 
     <Button
         android:id="@+id/loginButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Login"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:textSize="22sp"
+        android:background="@drawable/background_btn"/>
 
 </LinearLayout>

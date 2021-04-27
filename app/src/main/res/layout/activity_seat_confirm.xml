@@ -4,67 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fontFamily="serif"
     android:background="@drawable/background"
-    android:padding="8dp"
     android:orientation="vertical"
-    tools:context=".SignUpActivity">
+    android:padding="10dp"
+    tools:context=".SeatConfirmActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_marginTop="10dp"
         android:src="@drawable/bus_icon"/>
 
     <EditText
-        android:id="@+id/signInEmailEditTextId"
+        android:id="@+id/teacherNameEditTextId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="textEmailAddress"
-        android:hint="  Email Address"
-        android:textSize="20sp"
+        android:hint="Your Name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginTop="15dp"
         android:textAlignment="center"
         android:background="@drawable/button_back"/>
 
     <EditText
-        android:id="@+id/signInPasswordEditTextId"
+        android:id="@+id/departmentNameEditTextId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Department Name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_marginTop="10dp"
-        android:inputType="textPassword"
-        android:hint="  Password"
-        android:textSize="20sp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
+
+    <EditText
+        android:id="@+id/seatNumberEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Seat Number"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
+
+    <EditText
+        android:id="@+id/passcodeEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Passcode"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginTop="10dp"
         android:textAlignment="center"
         android:background="@drawable/button_back"/>
 
     <Button
-        android:id="@+id/loginButtonId"
+        android:id="@+id/seatBookedButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Login"
-        android:textSize="20sp"
-        android:background="@drawable/background_btn"/>
-
-    <Button
-        android:id="@+id/createAccountButtonId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="Create Account"
         android:textSize="20sp"
+        android:hint="Seat Booked"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/white"
         android:background="@drawable/background_btn"/>
 
-    <TextView
-        android:id="@+id/forgetPasswordId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="forget password"
-        android:textSize="22sp"
-        android:textColor="@color/black"
-        android:textStyle="italic"/>
+
+
+
+
 
 </LinearLayout>

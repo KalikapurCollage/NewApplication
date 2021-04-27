@@ -13,51 +13,53 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApplication">
         <activity
+            android:name=".SeatConfirmActivity"
+            android:parentActivityName=".SelectingSeatActivity" />
+        <activity
             android:name=".SelectingSeatActivity"
-            android:parentActivityName=".SearchActivity"/>
+            android:parentActivityName=".SearchActivity" />
         <activity
             android:name=".SearchActivity"
-            android:parentActivityName=".ScheduleActivity"/>
+            android:parentActivityName=".ScheduleActivity" />
         <activity
             android:name=".ResetPassword"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TrackingActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TeacherInfoActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".StoppageActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SettingActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SeatBookingActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ScheduleActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AboutNstuActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ContactsActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".HomeActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".SignInActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignUpActivity" />
     </application>
 
 </manifest>

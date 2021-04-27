@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
-    android:background="#ffffff"
+    android:padding="8dp"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <EditText
@@ -14,7 +14,9 @@
         android:hint="Email Address"
         android:textSize="20sp"
         android:textColorHint="@color/black"
-        android:textColor="@color/black"/>
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
 
 
 
