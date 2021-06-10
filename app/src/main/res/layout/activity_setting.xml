@@ -16,27 +16,4 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/bus_icon"/>
 
-    <Button
-        android:id="@+id/userSettingButtonId"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
-        android:text="User Setting"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:background="@drawable/button_back"/>
-
-    <Button
-        android:id="@+id/adminSettingButtonId"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:text="Admin Setting"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:background="@drawable/button_back"/>
-
-
-
-
 </LinearLayout>

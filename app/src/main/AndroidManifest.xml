@@ -20,7 +20,7 @@
             android:parentActivityName=".AdminActivity" />
         <activity
             android:name=".AdminActivity"
-            android:parentActivityName=".SettingActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SeatConfirmActivity"
             android:parentActivityName=".SelectingSeatActivity" />
