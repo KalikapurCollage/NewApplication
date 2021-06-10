@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".SeatConfirmActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/bus_icon"/>
+
+    <EditText
+        android:id="@+id/teacherNameEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
+
+    <EditText
+        android:id="@+id/departmentNameEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Department Name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
+
+    <EditText
+        android:id="@+id/seatNumberEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Seat Number"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
+
+    <EditText
+        android:id="@+id/passcodeEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Passcode"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_back"/>
+
+    <Button
+        android:id="@+id/seatBookedButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Seat Booked"
+        android:textSize="22dp"
+        android:textColorHint="@color/white"
+        android:background="@drawable/background_btn"/>
+
+
+
+
+
+
+</LinearLayout>

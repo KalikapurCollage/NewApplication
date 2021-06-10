@@ -1,0 +1,18 @@
+package com.example.newapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class ContactsActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_contacts);
+
+
+        getSupportActionBar().setTitle("Conatact");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+}
