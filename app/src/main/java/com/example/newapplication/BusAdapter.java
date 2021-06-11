@@ -21,6 +21,7 @@ public class BusAdapter extends ArrayAdapter<Bus> {
         this.context = context;
         this.busList = busList;
     }
+
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -28,17 +29,17 @@ public class BusAdapter extends ArrayAdapter<Bus> {
         LayoutInflater layoutInflater = context.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.bus_adapter, null, true);
 
-        Bus bus = busList.get(position);
-
         TextView name = view.findViewById(R.id.busNameId);
         TextView from = view.findViewById(R.id.busFromId);
         TextView to = view.findViewById(R.id.busToId);
         TextView time = view.findViewById(R.id.busTimeId);
 
+        Bus bus = busList.get(position);
+
         name.setText(bus.getName());
-        from.setText("From: "+bus.getFrom());
-        to.setText("To: "+bus.getTo());
-        time.setText("Time: "+bus.getTime());
+        from.setText("From: " + bus.getFrom());
+        to.setText("To: " + bus.getTo());
+        time.setText("Time: " + bus.getTime());
 
         return view;
     }

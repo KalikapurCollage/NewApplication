@@ -2,7 +2,6 @@ package com.example.newapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -25,7 +24,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class AddBusActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddBusScheduleActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText busName;
     private Spinner spinnerFrom;
@@ -41,12 +40,12 @@ public class AddBusActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_bus);
+        setContentView(R.layout.activity_add_bus_schedule);
 
-        getSupportActionBar().setTitle("Add New Bus");
+        getSupportActionBar().setTitle("Add Bus Schedule");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Buses");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Schedule");
 
         busName = findViewById(R.id.busNameEditTextId);
         spinnerFrom = findViewById(R.id.spinnerFromId);
@@ -74,7 +73,7 @@ public class AddBusActivity extends AppCompatActivity implements View.OnClickLis
 
                 //Initialize time picker dialog
                 TimePickerDialog timePickerDialog = new TimePickerDialog(
-                        AddBusActivity.this,
+                        AddBusScheduleActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
@@ -116,12 +115,10 @@ public class AddBusActivity extends AppCompatActivity implements View.OnClickLis
         loadData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BusListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ScheduleActivity.class);
                 startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -137,11 +134,7 @@ public class AddBusActivity extends AppCompatActivity implements View.OnClickLis
         String to = spinnerTo.getSelectedItem().toString().trim();
         String time = setTime.getText().toString().trim();
 
-
-        String id = databaseReference.push().getKey();
-        Bus bus = new Bus(name, from, to, time);
-        databaseReference.child(id).setValue(bus);
-        Toast.makeText(getApplicationContext(),"New Bus is Add",Toast.LENGTH_SHORT).show();
+        String key = databaseReference.push().getKey();
 
         if (TextUtils.isEmpty(name)) {
             //Bus Name is empty
@@ -167,8 +160,12 @@ public class AddBusActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
+        BusSchedule busSchedule = new BusSchedule(name, from, to, time);
+
+        databaseReference.child(key).setValue(busSchedule);
+        Toast.makeText(getApplicationContext(),"Set Bus Schedule",Toast.LENGTH_SHORT).show();
+
         busName.setText(" ");
         setTime.setText("Select Time");
     }
-
 }

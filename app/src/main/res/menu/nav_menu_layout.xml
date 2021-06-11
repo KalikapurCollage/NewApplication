@@ -60,9 +60,6 @@
                     android:id="@+id/aboutMenuId"
                     android:title="About Us" />
 
-                <item
-                    android:id="@+id/aboutAdminId"
-                    android:title="For Admin" />
             </group>
         </menu>
     </item>

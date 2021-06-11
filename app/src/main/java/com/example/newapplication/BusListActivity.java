@@ -1,10 +1,18 @@
 package com.example.newapplication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -46,8 +54,7 @@ public class BusListActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 busList.clear();
-                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     Bus bus = dataSnapshot1.getValue(Bus.class);
                     busList.add(bus);
                 }
@@ -59,7 +66,34 @@ public class BusListActivity extends AppCompatActivity {
 
             }
         });
-
         super.onStart();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Bus bus = busList.get(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(BusListActivity.this);
+
+                builder.setTitle("Delete Bus")
+                        .setMessage("Are You sure to delete this Bus")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Buses");
+
+                                reference.removeValue();
+                            }
+                        }).setNegativeButton("Cencel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(BusListActivity.this, " ", Toast.LENGTH_SHORT).show();
+
+                    }
+                }).show();
+
+            }
+        });
+
     }
 }

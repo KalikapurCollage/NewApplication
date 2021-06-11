@@ -2,22 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:background="@drawable/background"
-    android:orientation="vertical">
+    android:padding="10dp">
 
     <EditText
-        android:id="@+id/resetEmailPopId"
+        android:id="@+id/adminPopId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Email Address"
+        android:hint="Admin Passcode"
+        android:inputType="textPassword"
         android:textSize="20sp"
         android:textColorHint="@color/black"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:textAlignment="center"
         android:background="@drawable/button_back"/>
-
 
 
 </LinearLayout>

@@ -1,16 +1,19 @@
 package com.example.newapplication;
 
-public class Bus{
+public class BusSchedule {
+
+
+
     private String name;
     private String from;
     private String to;
     private String time;
 
-    public Bus() {
+    public BusSchedule() {
 
     }
 
-    public Bus(String name, String from, String to, String time){
+    public BusSchedule(String name, String from, String to, String time){
 
         this.name = name;
         this.from = from;
@@ -46,5 +49,4 @@ public class Bus{
     }
 
     public String getTime() { return time; }
-
 }

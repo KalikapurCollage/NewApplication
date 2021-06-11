@@ -73,7 +73,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 View view = inflater.inflate(R.layout.reset_pop, null);
 
                 reset_alert.setTitle("Reset Forgot Password?")
-                        .setMessage("Enter Your Email to get Password Reset Link")
+                        .setMessage("Enter Email to get Password Reset Link")
                         .setPositiveButton("Reset", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

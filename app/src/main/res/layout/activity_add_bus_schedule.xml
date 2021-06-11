@@ -7,7 +7,7 @@
     android:background="@drawable/background"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".AddBusActivity">
+    tools:context=".AddBusScheduleActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -68,27 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:hint="Submit Data"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColorHint="@color/white"
-        android:background="@drawable/background_btn"/>
-
-    <Button
-        android:id="@+id/loadDataButtonId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="Load Data"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColorHint="@color/white"
-        android:background="@drawable/background_btn"/>
-
-    <Button
-        android:id="@+id/deleteDataButtonId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="Delete Data"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textSize="22dp"
         android:textColorHint="@color/white"
         android:background="@drawable/background_btn"/>
 

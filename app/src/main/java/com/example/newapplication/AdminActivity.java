@@ -36,7 +36,8 @@ public class AdminActivity extends AppCompatActivity {
         addBusSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), AddBusScheduleActivity.class);
+                startActivity(intent);
             }
         });
 

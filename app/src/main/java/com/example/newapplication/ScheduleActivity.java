@@ -1,18 +1,32 @@
 package com.example.newapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScheduleActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    CustomAdapter adapter;
-    private String[] busName, busFrom, busTo, busTime;
-    private int[] images = {R.drawable.bus_picture};
+    private ListView listView;
+    private List<Bus> busList;
+    private BusAdapter busAdapter;
+
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +36,37 @@ public class ScheduleActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Bus Schedule");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        recyclerView = findViewById(R.id.recyclerViewId);
+        listView = findViewById(R.id.listviewId);
 
-        busName = getResources().getStringArray(R.array.bus_name);
-        busFrom = getResources().getStringArray(R.array.bus_from);
-        busTo = getResources().getStringArray(R.array.bus_to);
-        busTime = getResources().getStringArray(R.array.bus_time);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Schedule");
+        busList = new ArrayList<>();
 
-         adapter = new CustomAdapter(this, busName, busFrom, busTo, busTime, images);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        busAdapter = new BusAdapter(ScheduleActivity.this, busList);
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                busList.clear();
+                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                {
+                    Bus bus = dataSnapshot1.getValue(Bus.class);
+                    busList.add(bus);
+                }
+                listView.setAdapter(busAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        super.onStart();
     }
 }
